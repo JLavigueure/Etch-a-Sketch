@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aliceblue;
+    background-color: rgb(241, 241, 241);
 }
 
 .header {
@@ -22,18 +22,9 @@ body {
     /* background-color: rgb(156, 156, 156); */
 }
 
-#input,
-#reset {
-    font-size: 20px;
-    height: 50px;
-    width: 100px;
-    border-radius: .1em;
-    outline: none;
-    border: 2px solid rgb(156, 156, 156);
-}
-
-#input {
-    width: 180px;
+.title {
+    font-size: 90px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 .grid {
@@ -44,6 +35,36 @@ height: 85vh;
 /* rows and columns set by js */
 }
 
-.hover {
-    background-color: black;
+.main {
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+}
+
+.modes {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+#input, 
+.btn {
+    font-size: 20px;
+    width: 160px;
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid black;
+    background-color: transparent;
+}
+
+#input {
+    width: 200px;
+    padding-left: 20px;
+    color: rgb(0, 0, 0);
+}
+
+::placeholder {
+    opacity: 1;
+    color: rgb(177, 177, 177);
 }

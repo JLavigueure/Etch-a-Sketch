@@ -2,12 +2,19 @@
 let block = [];
 const grid = document.querySelector('.grid');
 makeGrid(16);
+toBlack();
 
 // get input from user
-let gridSize = document.getElementById("input").value;
-gridSize = parseInt(gridSize);
-let btn = document.getElementById("reset");
-btn.addEventListener('click', () => makeGrid(document.getElementById("input").value));
+let resetBtn = document.getElementById("reset");
+resetBtn.addEventListener('click', () => makeGrid(document.getElementById("input").value));
+let rainbowBtn = document.getElementById("rainbow");
+rainbowBtn.addEventListener('click', () => toRainbow());
+let classicBtn = document.getElementById("classic");
+classicBtn.addEventListener('click', () => toBlack());
+let eraserBtn = document.getElementById("eraser");
+eraserBtn.addEventListener('click', () => eraser());
+
+
 
 function resetGrid() {
     // remove all current childeren of grid
@@ -22,6 +29,7 @@ function resetGrid() {
 
 function makeGrid(int) {
     if (int > 100) {alert("Please enter a number less than 100"); return 1;}
+    else if (int < 1) {int = 16}
     resetGrid();
     console.log(`Making new grid ${int}x${int}`);
     let blockid = 0; 
@@ -40,15 +48,44 @@ function makeGrid(int) {
         }
     }
     console.log(`${blockid} divs created`)
-    hover();
+    toBlack();
 }
 
-function hover() {
+function toBlack() {
+    // listen for mouseover, add .hover css class when detected
+    for (i = 0; i < block.length; i++) {
+        block[i].addEventListener("mouseenter", e => {
+            e.target.style.backgroundColor= `rgb(0, 0, 0`;
+            e.target.style.opacity = "1";
+        })
+    }
+    console.log("Color set to black")
+}
+
+function eraser() {
+    // listen for mouseover, add .hover css class when detected
+    for (i = 0; i < block.length; i++) {
+        block[i].addEventListener("mouseenter", e => {
+            e.target.style.opacity = "0";
+        })
+    }
+    console.log("Eraser mode")
+}
+
+function toRainbow() {
         // listen for mouseover, add .hover css class when detected
         for (i = 0; i < block.length; i++) {
             block[i].addEventListener("mouseenter", e => {
-                e.target.classList.add('hover')
+                e.target.style.opacity = "1";
+                let newR = randomColor();
+                let newG = randomColor();
+                let newB = randomColor();
+                e.target.style.backgroundColor= `rgb(${newR}, ${newG}, ${newB})`;
             })
         }
-        console.log("Hover class added")
+        console.log("Color set to rainbow")
+}
+    function randomColor() {
+    console.log("color created")
+    return(Math.floor(Math.random() * 255))
 }
