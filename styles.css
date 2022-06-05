@@ -16,3 +16,7 @@ height: 90vh;
     border: 1px solid red;
     margin: 0px;
 }
+
+.hover {
+    background-color: black;
+}
