@@ -7,7 +7,7 @@ makeGrid(16);
 let gridSize = document.getElementById("input").value;
 gridSize = parseInt(gridSize);
 let btn = document.getElementById("reset");
-btn.addEventListener('click', () => makeGrid(document.getElementById("input").value));  //ADDING THIS LINE BREAKS CODE
+btn.addEventListener('click', () => makeGrid(document.getElementById("input").value));
 
 function resetGrid() {
     // remove all current childeren of grid
