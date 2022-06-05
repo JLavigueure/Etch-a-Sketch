@@ -40,11 +40,15 @@ function makeGrid(int) {
         }
     }
     console.log(`${blockid} divs created`)
-    // listen for mouseover, add .hover css class when detected
-    for (i = 0; i < block.length; i++) {
-        block[i].addEventListener("mouseenter", e => {
-            e.target.classList.add('hover')
-        })
-    }
-    console.log("Hover class added")
+    hover();
+}
+
+function hover() {
+        // listen for mouseover, add .hover css class when detected
+        for (i = 0; i < block.length; i++) {
+            block[i].addEventListener("mouseenter", e => {
+                e.target.classList.add('hover')
+            })
+        }
+        console.log("Hover class added")
 }
