@@ -89,3 +89,13 @@ function toRainbow() {
     console.log("color created")
     return(Math.floor(Math.random() * 255))
 }
+
+let allBtns = document.querySelectorAll(".btn");
+for (let i = 0; i < allBtns.length; i++) {
+    allBtns[i].addEventListener("mouseenter", e => {
+        e.target.classList.add("highlight");
+    })
+    allBtns[i].addEventListener("mouseout", e => {
+        e.target.classList.remove("highlight");
+    })
+}

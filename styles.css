@@ -68,3 +68,10 @@ height: 85vh;
     opacity: 1;
     color: rgb(177, 177, 177);
 }
+
+.highlight {
+    background-color: rgba(0, 0, 0, 0.122);
+    outline: 3px solid rgb(221, 230, 53);
+    height: 53px;
+    width: 170px;
+}
